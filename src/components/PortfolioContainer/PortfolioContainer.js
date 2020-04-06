@@ -3,7 +3,6 @@ import "./PortfolioContainer.css";
 import DailyTrackingGraph from "../DailyTrackingGraph/DailyTrackingGraph";
 import AvailableCash from "../AvailableCash/AvailableCash";
 import YourAssets from "../YourAssets/YourAssets";
-import YourAssetsHead from "../YourAssetsHead/YourAssetsHead";
 import AvailableCrypto from "../AvailableCrypto/AvailableCrypto";
 
 function PortfolioContainer() {
@@ -26,12 +25,7 @@ function PortfolioContainer() {
       </div>
       <div className="ui grid">
         <div className="twelve wide column">
-          <div className="">
-            <YourAssetsHead />
-          </div>
-        <div className="AQ~cv v">
-            <YourAssets />
-          </div>
+          <YourAssets />
         </div>
         <div className="four wide column">
 

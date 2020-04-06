@@ -5,28 +5,54 @@ import { Button, Modal } from "semantic-ui-react";
 function YourAssets() {
   return (
     <div className="YourAssets">
-      <table className="ui table">
+      <table className="ui single line table">
+        <thead className="">
+          <tr className="">
+            <th className="">#</th>
+            <th className="">Name</th>
+            <th className="">Price</th>
+            <th className="">Change</th>
+            <th className="">Own In Usd</th>
+            <th className="">Sell</th>
+            <th className="">Buy</th>
+          </tr>
+        </thead>
         <tbody className="">
           <tr className="">
             <td className="">1</td>
-            <td className="name-content">
-              <img src='' alt="" />
-              <p className="crypto-name">Bitcoin</p>
-              <p className="crypto-symbol">BTC</p>
-            </td>
-            <td className="">$6,896.78</td>
-            <td className="">+0.56%</td>
             <td className="">
-              <Modal trigger={<Button color="yellow">Sell</Button>}>
+              <div className="yourAssetsNameColumn">
+                <div className="yourAssetsImg">
+                  <img src="https://crypto-icones.s3.us-east-2.amazonaws.com/btc.svg" alt=""/>
+                </div>
+                <div className="yourAssetsName">
+                  Bitcoin
+                </div>
+                <div className="yourAssetsSymbol">
+                  BTC
+                </div>
+              </div>
+            </td>
+            <td className="">$6,678.30</td>
+            <td className="">34.45%</td>
+            <td className="">$23,023.34</td>
+            <td className="">
+              <Modal
+                trigger={<button className="ui button yellow">Sell</button>}
+                style={{ width: "50%" }}
+              >
                 <Modal.Content style={{ backgroundColor: "#fcfcfc" }}>
-                  {/* <SellCryptoForm /> */}
+
                 </Modal.Content>
               </Modal>
             </td>
             <td className="">
-              <Modal trigger={<Button color="green">Buy</Button>}>
+            <Modal
+                trigger={<button className="ui button green">Buy</button>}
+                style={{ width: "50%" }}
+              >
                 <Modal.Content style={{ backgroundColor: "#fcfcfc" }}>
-                  {/* <BuyCryptoForm /> */}
+
                 </Modal.Content>
               </Modal>
             </td>

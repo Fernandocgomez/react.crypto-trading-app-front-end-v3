@@ -43,7 +43,7 @@ const options = {
     },
     elements: {
         point:{
-            radius: 4
+            radius: 3
         }
     },
     scales: {
