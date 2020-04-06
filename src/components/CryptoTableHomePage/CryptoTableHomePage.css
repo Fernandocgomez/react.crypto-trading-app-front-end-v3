@@ -1,0 +1,18 @@
+.name-content p {
+    margin-left: 1rem;
+    padding-top: 0.5rem;
+}
+
+ .crypto-name {
+    font-weight: 700;
+}
+
+.crypto-symbol {
+    color: #a3a7ad;
+}
+
+.name-content {
+    display: flex;
+    flex-direction: row;
+
+}

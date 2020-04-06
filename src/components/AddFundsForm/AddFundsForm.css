@@ -1,0 +1,12 @@
+.add-funds-heading {
+    text-align: center;
+    color: #16ab7e;
+}
+
+.add-funds-ammount::placeholder {
+    text-align: center;
+}
+
+.add-funds-ammount {
+    text-align: center;
+}

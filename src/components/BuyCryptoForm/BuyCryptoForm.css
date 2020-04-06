@@ -1,0 +1,24 @@
+.available-cash {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+
+.exchange-icon {
+    margin-left: 1rem;
+    width: 6rem;
+}
+
+.buyCryptoInput {
+    width: 100%;
+}
+
+.dollarToCrypto {
+    width: 3rem;
+}
+
+.ammountExchange {
+    margin-left: 2rem;
+    margin-top: .5rem;
+    font-size: 1.5rem;
+}
