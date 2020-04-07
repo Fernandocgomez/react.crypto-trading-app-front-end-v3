@@ -16,6 +16,7 @@ function YourAssets(props) {
       currency: "USD"
     });
 
+console.log(props.cryptos)
     return (
       <>
         {props.cryptos.map(crypto => (

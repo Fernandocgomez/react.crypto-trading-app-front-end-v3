@@ -36,7 +36,13 @@ export const fetchYourAssests = (portfolio_id) => {
         })
         .then(res => res.json())
         .then(res => {
-            dispatch(yourAssetsFetchSuccess(res.my_crypto_assests))
+            console.log(res)
+            if(res.my_crypto_assests !== undefined) {
+                dispatch(yourAssetsFetchSuccess(res.my_crypto_assests))
+            } else {
+                dispatch(yourAssetsFetchFailure(res.message))
+            }
+            
         })
     }
 }
