@@ -10,6 +10,7 @@ import {
 import dollarToCrypto from '../../assets/dollar-to-crypto.png'
 
 function BuyCryptoForm(props) {
+  
   useEffect(() => {
     props.checkBalance(localStorage.portafolio_id);
   }, []);
@@ -23,6 +24,7 @@ function BuyCryptoForm(props) {
   const [exchange, setExchange] = useState(true);
   const [dollarAmmount, setDollarAmmount] = useState(0.0);
   const [cryptoAmmount, setCryptoAmmount] = useState(0);
+
   let ammount;
   let percentage = cryptoAmmount * 100;
   let ammountInDollars = (parseFloat(props.cryptoObj.priceUsd) * percentage) / 100;

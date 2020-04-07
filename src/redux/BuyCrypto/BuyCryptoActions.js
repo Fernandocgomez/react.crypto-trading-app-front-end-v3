@@ -36,6 +36,7 @@ const buyCryptoInUsErrordAction = (error) => {
 
 export const buyCryptoInUsd = (inputInDollars, cryptoObj, event, portafolio_id, history) => {
     event.preventDefault()
+
     const config = {
         headers: {
             'Authorization': `Bearer ${localStorage.token}`,
@@ -44,7 +45,8 @@ export const buyCryptoInUsd = (inputInDollars, cryptoObj, event, portafolio_id, 
     }
 
     const bodyParameters = {
-        cryptoId: cryptoObj.id, 
+        
+        cryptoId: Number.isInteger(cryptoObj.id) ? cryptoObj.cryptoId : cryptoObj.id, 
         name: cryptoObj.name, 
         rank: cryptoObj.rank, 
         symbol: cryptoObj.symbol, 
@@ -71,8 +73,7 @@ export const buyCryptoInUsd = (inputInDollars, cryptoObj, event, portafolio_id, 
                 const portafolioAndNewCrypto = response.data
                 dispatch(buyCryptoInUsdAction(portafolioAndNewCrypto))
                 if(history === undefined) {
-                    // I leave this one like this in case you don't have history 
-                    // and you want just to stay in the same page
+                    window.location.reload();
                 } else {
                     history.push("/portfolio")
                 }

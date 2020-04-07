@@ -11,6 +11,7 @@ import addFundsReducer from './AddFundsForm/AddFundsFormReducer';
 import editUserReducer from './EditAccount/EditAccountReducer';
 import dailyTrackingGraphReducer from './DailyTrackingGraph/DailyTrackingGraphReducer';
 import availableCryptoReducer from './AvailableCrypto/AvailableCryptoReducer';
+import yourAssestsReducer from './YourAssests/YourAssestsReducer';
 
 
 
@@ -24,7 +25,8 @@ const rootReducer = combineReducers({
     addFundsReducer: addFundsReducer, 
     editUserReducer: editUserReducer, 
     dailyTrackingGraphReducer: dailyTrackingGraphReducer, 
-    availableCryptoReducer: availableCryptoReducer
+    availableCryptoReducer: availableCryptoReducer, 
+    yourAssestsReducer: yourAssestsReducer
 
 })
 
