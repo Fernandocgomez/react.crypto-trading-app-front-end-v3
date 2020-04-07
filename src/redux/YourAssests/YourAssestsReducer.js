@@ -8,6 +8,7 @@ const initialState = {
     loading: true, 
     cryptos: [], 
     error: '', 
+    noCryptoMsg: false
 }
 
 const yourAssestsReducer = (state = initialState, action) => {
@@ -17,14 +18,16 @@ const yourAssestsReducer = (state = initialState, action) => {
                 ...state,
                 loading: false,
                 cryptos: action.payload, 
-                error: ''
+                error: '', 
+                noCryptoMsg: false
             }
         case YOUR_ASSESTS_FETCH_FAILURE: 
             return {
                 ...state,
                 loading: false,
                 cryptos: [], 
-                error: action.payload
+                error: action.payload,
+                noCryptoMsg: true 
             }
         default: 
             return state

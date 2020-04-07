@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import imgTableLoader from '../../assets/img-table-loader.png'
 import { fetchYourAssests } from "../../redux/YourAssests/YourAssestsActions";
 import BuyCryptoForm from "../BuyCryptoForm/BuyCryptoForm";
+import { Link } from "react-router-dom";
 
 function YourAssets(props) {
   useEffect(() => {
@@ -16,7 +17,9 @@ function YourAssets(props) {
       currency: "USD"
     });
 
-console.log(props.cryptos)
+    function numberWithCommas(x) {
+      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
     return (
       <>
         {props.cryptos.map(crypto => (
@@ -45,6 +48,8 @@ console.log(props.cryptos)
                 </td>
               )}
           <td className="">{formatter.format((parseFloat(crypto.priceUsd) * crypto.crypto_Percentage)/100)}</td>
+
+          <td className="">{numberWithCommas((crypto.crypto_Percentage/100).toFixed(2))}</td>
           <td className="">
             <Modal
               trigger={<button className="ui button yellow">Sell</button>}
@@ -82,6 +87,7 @@ console.log(props.cryptos)
             <th className="">Price</th>
             <th className="">Change 24Hrs</th>
             <th className="">Own In Usd</th>
+            <th className="">Coins</th>
             <th className="">Sell</th>
             <th className="">Buy</th>
           </tr>
@@ -105,6 +111,24 @@ console.log(props.cryptos)
       ) : (
           <>
           </>)}
+
+        {props.noCryptoMsg ? (
+          <div className="ui segment reduceMarginTop">
+          <div className="ui active transition visible inverted dimmer">
+            <div className="content">
+        <div className="ui inverted text loader">{props.error} <br/> <Link to="/">Click Here To Buy Crypto Currency</Link></div>
+        
+
+            </div>
+          </div>
+          <img src={imgTableLoader} className="ui image" alt="loader"/>
+        </div>
+        ) : (
+          <></>
+        )}
+
+
+
       
     </div>
   );
@@ -115,6 +139,7 @@ const mapStateToProps = (state) => {
     loading: state.yourAssestsReducer.loading, 
     cryptos: state.yourAssestsReducer.cryptos, 
     error: state.yourAssestsReducer.error, 
+    noCryptoMsg: state.yourAssestsReducer.noCryptoMsg
   };
 };
 
