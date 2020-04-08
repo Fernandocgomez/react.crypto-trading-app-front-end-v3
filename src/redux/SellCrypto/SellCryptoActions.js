@@ -42,7 +42,7 @@ export const sellCryptoFetch = (event, ammount, crypto_id) => {
         dispatch(sellCryptoFetchReset())
 
         if(ammount < 0) {
-            return dispatch(sellCryptoFetchFailureCrypto('negative values are not allow'))
+            return dispatch(sellCryptoFetchFailureUsd('negative values are not allow'))
         } else {
 
             fetch(`https://crypto-simulator-api.herokuapp.com/sell_crypto/${crypto_id}`, {
