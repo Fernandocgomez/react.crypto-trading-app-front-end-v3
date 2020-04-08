@@ -6,6 +6,8 @@ import imgTableLoader from '../../assets/img-table-loader.png'
 import { fetchYourAssests } from "../../redux/YourAssests/YourAssestsActions";
 import BuyCryptoForm from "../BuyCryptoForm/BuyCryptoForm";
 import { Link } from "react-router-dom";
+import SellCrypto from '../SellCrypto/SellCrypto'
+
 
 function YourAssets(props) {
   useEffect(() => {
@@ -57,7 +59,9 @@ function YourAssets(props) {
             >
               <Modal.Content
                 style={{ backgroundColor: "#fcfcfc" }}
-              ></Modal.Content>
+              >
+                <SellCrypto cryptoObj={crypto}/>
+              </Modal.Content>
             </Modal>
           </td>
           <td className="">

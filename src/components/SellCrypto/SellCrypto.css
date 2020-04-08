@@ -1,0 +1,43 @@
+.sell-header {
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 600;
+    color: #16ab7e;
+}
+.sell-bold {
+    font-weight: 700;
+}
+
+.sell-name-column {
+    display: flex;
+}
+
+.sell-crytpo-name {
+    font-weight: 700;
+    margin-top: .5rem;
+    margin-right: 1rem;
+}
+
+.sell-crypto-symbol {
+    color: grey;
+    margin-top: .5rem;
+}
+
+.sell-name-column img {
+    margin-right: 1rem;
+}
+
+.sell-exchange-icon {
+    width: 3rem;
+}
+
+.sell-input::placeholder {
+    text-align: center;
+    font-size: 1.5rem;
+
+}
+
+.sell-input {
+    text-align: center;
+    font-size: 1.5rem;
+}

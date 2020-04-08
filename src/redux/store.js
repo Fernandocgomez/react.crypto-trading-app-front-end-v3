@@ -12,6 +12,7 @@ import editUserReducer from './EditAccount/EditAccountReducer';
 import dailyTrackingGraphReducer from './DailyTrackingGraph/DailyTrackingGraphReducer';
 import availableCryptoReducer from './AvailableCrypto/AvailableCryptoReducer';
 import yourAssestsReducer from './YourAssests/YourAssestsReducer';
+import sellCryptoReducer from './SellCrypto/SellCryptoReducer';
 
 
 
@@ -26,7 +27,8 @@ const rootReducer = combineReducers({
     editUserReducer: editUserReducer, 
     dailyTrackingGraphReducer: dailyTrackingGraphReducer, 
     availableCryptoReducer: availableCryptoReducer, 
-    yourAssestsReducer: yourAssestsReducer
+    yourAssestsReducer: yourAssestsReducer, 
+    sellCryptoReducer: sellCryptoReducer
 
 })
 
