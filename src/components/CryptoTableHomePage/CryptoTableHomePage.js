@@ -4,6 +4,9 @@ import React, { useEffect } from "react";
 import { fetchDataForCryptoTable } from "../../redux/CryptoTableHomePage/CryptoTableHomePageActions";
 import CryptoTableLoader from "../CryptoTableLoader/CryptoTableLoader";
 import ConditionalBuyButton from "../ConditionalBuyButton/ConditionalBuyButton";
+import icon from '../../assets/btc.png'
+import { setSource } from "../../assets/SetSource";
+
 
 
 
@@ -12,24 +15,31 @@ function CryptoTableHomePage(props) {
     props.fetchCryptos();
   }, []);
 
+
   const renderRowsOnTable = () => {
     let formatter = new Intl.NumberFormat("en-US", {
       style: "currency",
       currency: "USD"
     });
 
+    
+
     return (
 
       <>
         {props.cryptoData.data.map(crypto => (
+
           <tbody key={crypto.rank}>
             <tr>
             <td>{crypto.rank}</td>
               <td className="name-content">
                 <img
-                  src={`https://crypto-icones.s3.us-east-2.amazonaws.com/${crypto.symbol.toLowerCase()}.svg`}
+                  src={
+                    setSource(crypto)
+                  }
                   alt={`${crypto.name} icon`}
                 />
+        
                 <p className="crypto-name">{crypto.name}</p>
                 <p className="crypto-symbol">{crypto.symbol}</p>
               </td>
@@ -68,7 +78,7 @@ const renderRowsOnTableFromSearchResults = () => {
         <td>{crypto.rank}</td>
               <td className="name-content">
                 <img
-                  src={`https://crypto-icones.s3.us-east-2.amazonaws.com/${crypto.symbol.toLowerCase()}.svg`}
+                  src={setSource(crypto)}
                   alt={`${crypto.name} icon`}
                 />
                 <p className="crypto-name">{crypto.name}</p>

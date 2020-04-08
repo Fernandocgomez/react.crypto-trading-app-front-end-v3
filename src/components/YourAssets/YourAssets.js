@@ -7,6 +7,7 @@ import { fetchYourAssests } from "../../redux/YourAssests/YourAssestsActions";
 import BuyCryptoForm from "../BuyCryptoForm/BuyCryptoForm";
 import { Link } from "react-router-dom";
 import SellCrypto from '../SellCrypto/SellCrypto'
+import { setSource } from "../../assets/SetSource";
 
 
 function YourAssets(props) {
@@ -31,7 +32,7 @@ function YourAssets(props) {
             <div className="yourAssetsNameColumn">
               <div className="yourAssetsImg">
                 <img
-                  src={`https://crypto-icones.s3.us-east-2.amazonaws.com/${crypto.symbol.toLowerCase()}.svg`}
+                  src={setSource(crypto)}
                   alt=""
                 />
               </div>

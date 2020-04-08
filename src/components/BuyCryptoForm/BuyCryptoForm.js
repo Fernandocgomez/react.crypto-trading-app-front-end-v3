@@ -8,6 +8,7 @@ import {
   buyCryptoInUsd
 } from "../../redux/BuyCrypto/BuyCryptoActions";
 import dollarToCrypto from '../../assets/dollar-to-crypto.png'
+import { setSource } from "../../assets/SetSource";
 
 function BuyCryptoForm(props) {
   
@@ -86,7 +87,7 @@ function BuyCryptoForm(props) {
                     <td>{props.cryptoObj.rank}</td>
                     <td className="name-content">
                       <img
-                        src={`https://crypto-icones.s3.us-east-2.amazonaws.com/${props.cryptoObj.symbol.toLowerCase()}.svg`}
+                        src={setSource(props.cryptoObj)}
                         alt={`${props.cryptoObj.name} icon`}
                       />
                       <p className="crypto-name">{props.cryptoObj.name}</p>

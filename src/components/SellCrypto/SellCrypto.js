@@ -7,6 +7,7 @@ import {
   sellCryptoFetch,
   sellCryptoFetchUnit,
 } from "../../redux/SellCrypto/SellCryptoActions";
+import { setSource } from "../../assets/SetSource";
 
 function SellCrypto(props) {
   const [ammount, setAmmount] = useState(0.0);
@@ -68,7 +69,7 @@ function SellCrypto(props) {
                 <td class="">1</td>
                 <td class="sell-name-column">
                   <img
-                    src={`https://crypto-icones.s3.us-east-2.amazonaws.com/${props.cryptoObj.symbol.toLowerCase()}.svg`}
+                    src={setSource(props.cryptoObj)}
                     alt=""
                   />
                   <div className="sell-crytpo-name">{props.cryptoObj.name}</div>
