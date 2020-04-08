@@ -43,7 +43,7 @@ function SellCrypto(props) {
 
     setAmmount(all);
   };
-  console.log(props);
+
   return (
     <div className="ui grid">
       <div className="sixteen column">

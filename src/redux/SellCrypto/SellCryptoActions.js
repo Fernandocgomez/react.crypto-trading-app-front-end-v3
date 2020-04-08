@@ -57,14 +57,13 @@ export const sellCryptoFetch = (event, ammount, crypto_id) => {
         })
         .then(res => res.json())
         .then(res => {
-            console.log(res)
             if(res.message == undefined) {
                 window.location.reload();
             } else {
                 dispatch(sellCryptoFetchFailureUsd(res.message))
             }
         })
-        
+
         }
 
         
@@ -95,7 +94,6 @@ export const sellCryptoFetchUnit = (event, coin, crypto_id, currentCryptoPrice) 
         })
         .then(res => res.json())
         .then(res => {
-            console.log(res)
             if(res.message == undefined) {
                 window.location.reload();
             } else {
